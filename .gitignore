@@ -16,3 +16,6 @@
 # Additional folders
 Debug
 .vscode
+
+# Data files
+*.mp3

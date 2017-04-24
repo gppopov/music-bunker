@@ -36,9 +36,9 @@ func handleFileServer(dir, prefix string) http.HandlerFunc {
 func main() {
 	authenticator := auth.NewBasicAuthenticator("localhost", Secret)
 	http.HandleFunc("/static/", auth.JustCheck(authenticator, handleFileServer("f:/Music", "/static/")))
-	http.HandleFunc("/", auth.JustCheck(authenticator, doRoot))
+	http.HandleFunc("/", auth.JustCheck(authenticator, handleFileServer("./", "/")))
 
-	log.Println(`Listening... http://localhost:3001
+	log.Println(`Listening... http://localhost:8022
  		folder is ./static
  		authentication in map users`)
 
