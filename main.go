@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/abbot/go-http-auth"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 func Secret(user, realm string) string {
